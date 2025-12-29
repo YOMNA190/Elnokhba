@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>النخبة للتشطيبات | لياسة وترميم فاخر بالرياض</title>
     
-    <!-- علامة التتبع Google Analytics -->
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17822392392"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'AW-17822392392');
+        gtag('event', 'conversion', {'send_to': 'AW-17822392392/MPMHCNKV99gbEMjAsLJC'});
     </script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,21 +20,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* ===== CSS Variables ===== */
         :root {
-            --primary-color: #d4a574;
-            --secondary-color: #b88c5c;
-            --dark-color: #1a1a1a;
-            --light-color: #f5f5f5;
-            --text-color: #333;
-            --border-radius: 20px;
-            --section-padding: 80px 0;
-            --transition: all 0.3s ease;
-            --shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-            --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.15);
+            --primary-gold: #D4AF37;
+            --secondary-gold: #B8860B;
+            --dark-bg: #0A0A0A;
+            --light-bg: #F9F9F9;
+            --card-bg: #FFFFFF;
+            --text-dark: #222222;
+            --text-light: #666666;
+            --border-radius: 12px;
+            --section-spacing: 100px 0;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 20px 60px rgba(212, 175, 55, 0.15);
         }
 
-        /* ===== Reset & Base Styles ===== */
         * {
             margin: 0;
             padding: 0;
@@ -46,10 +47,10 @@
 
         body {
             font-family: 'Cairo', sans-serif;
-            color: var(--text-color);
-            line-height: 1.6;
-            background-color: #fff;
+            color: var(--text-dark);
+            background-color: var(--light-bg);
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
         .container {
@@ -60,188 +61,47 @@
 
         .section-title {
             text-align: center;
-            font-size: 36px;
+            font-size: 42px;
             margin-bottom: 60px;
-            color: var(--dark-color);
+            color: var(--text-dark);
             position: relative;
-            padding-bottom: 20px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
         }
 
         .section-title::after {
             content: '';
             position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--primary-color);
+            bottom: -15px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-gold), var(--secondary-gold));
+            border-radius: 2px;
         }
 
-        .cta-button {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: var(--dark-color);
-            padding: 18px 45px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 18px;
-            transition: var(--transition);
-            border: 2px solid var(--primary-color);
-            box-shadow: 0 10px 30px rgba(212, 165, 116, 0.3);
-            cursor: pointer;
-        }
-
-        .cta-button:hover {
-            background-color: transparent;
-            color: var(--primary-color);
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(212, 165, 116, 0.4);
-        }
-
-        /* ===== أزرار التواصل العملاقة ===== */
-        .mega-contact-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
-
-        .mega-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            padding: 25px 50px;
-            border-radius: 70px;
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 24px;
-            transition: var(--transition);
-            border: 3px solid transparent;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-            min-width: 280px;
-            text-align: center;
-        }
-
-        .mega-phone {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: var(--dark-color);
-            border: 3px solid var(--primary-color);
-        }
-
-        .mega-whatsapp {
-            background: linear-gradient(135deg, #25D366, #128C7E);
-            color: white;
-            border: 3px solid #25D366;
-        }
-
-        .mega-button:hover {
-            transform: translateY(-10px) scale(1.05);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-        }
-
-        .mega-button .icon {
-            font-size: 32px;
-        }
-
-        /* ===== Floating Action Buttons - معدل بحجم أكبر ===== */
-        .floating-buttons {
-            position: fixed;
-            left: 40px;
-            bottom: 40px;
-            z-index: 1000;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .floating-button {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            color: white;
-            text-decoration: none;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            transition: var(--transition);
+        .gold-text {
+            color: var(--primary-gold);
             position: relative;
-            animation: pulse 2s infinite;
         }
 
-        .floating-button.phone {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-        }
-
-        .floating-button.whatsapp {
-            background: linear-gradient(135deg, #25D366, #128C7E);
-        }
-
-        .floating-button:hover {
-            transform: translateY(-8px) scale(1.15);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-            animation: none;
-        }
-
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(212, 165, 116, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 15px rgba(212, 165, 116, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(212, 165, 116, 0);
-            }
-        }
-
-        .floating-button::after {
-            content: attr(data-tooltip);
-            position: absolute;
-            left: 90px;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: var(--dark-color);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-size: 16px;
-            white-space: nowrap;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-            pointer-events: none;
-            z-index: 1001;
-        }
-
-        .floating-button:hover::after {
-            opacity: 1;
-            visibility: visible;
-            left: 95px;
-        }
-
-        /* ===== Navigation Bar ===== */
+        /* ===== NAVBAR - أكثر أناقة ===== */
         .navbar {
-            background-color: var(--dark-color);
-            color: white;
-            padding: 15px 0;
+            background-color: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
             position: fixed;
             top: 0;
             width: 100%;
-            z-index: 999;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            border-bottom: 2px solid var(--primary-gold);
             transition: var(--transition);
         }
 
         .navbar.scrolled {
-            padding: 10px 0;
-            background-color: rgba(26, 26, 26, 0.95);
-            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
         }
 
         .navbar .container {
@@ -253,228 +113,217 @@
         .logo {
             font-size: 28px;
             font-weight: 900;
-            color: var(--primary-color);
+            color: var(--primary-gold);
             text-decoration: none;
             display: flex;
             align-items: center;
             gap: 10px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
 
-        .logo::before {
-            content: "👑";
-            font-size: 26px;
+        .logo span {
+            color: white;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
             gap: 40px;
-            margin: 0;
-            padding: 0;
         }
 
         .nav-links a {
             color: white;
             text-decoration: none;
-            font-weight: 700;
-            font-size: 17px;
+            font-weight: 600;
+            font-size: 16px;
             transition: var(--transition);
-            padding: 8px 15px;
+            padding: 8px 16px;
             border-radius: 6px;
-            position: relative;
         }
 
         .nav-links a:hover {
-            color: var(--primary-color);
-            background-color: rgba(212, 165, 116, 0.15);
+            color: var(--primary-gold);
+            background: rgba(212, 175, 55, 0.1);
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 50%;
-            transform: translateX(-50%) scaleX(0);
-            width: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover::after {
-            width: 80%;
-            transform: translateX(-50%) scaleX(1);
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 28px;
-            cursor: pointer;
-        }
-
-        /* ===== Hero Section ===== */
+        /* ===== HERO - تصميم فاخر ===== */
         .hero {
-            position: relative;
             height: 100vh;
-            min-height: 600px;
-            overflow: hidden;
-            margin-top: 60px;
+            min-height: 700px;
+            position: relative;
+            background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.9)), 
+                        url('assets/hero.jpeg') center/cover fixed;
+            display: flex;
+            align-items: center;
+            margin-top: 80px;
         }
 
         .hero-content {
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
-
-        .hero-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: brightness(0.6);
-            animation: zoomIn 20s ease-in-out infinite alternate;
-        }
-
-        @keyframes zoomIn {
-            0% {
-                transform: scale(1);
-            }
-            100% {
-                transform: scale(1.1);
-            }
-        }
-
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.5) 100%);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
             text-align: center;
             color: white;
-            padding: 40px;
+            padding: 0 20px;
         }
 
-        .hero-overlay h1 {
-            font-size: 56px;
+        .hero h1 {
+            font-size: 60px;
             font-weight: 900;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             line-height: 1.2;
-            text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.6);
-            animation: fadeInUp 1s ease-out;
-            background: linear-gradient(45deg, var(--primary-color), #f5e6d3);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
-        .hero-overlay p {
-            font-size: 22px;
+        .hero h1 .highlight {
+            color: var(--primary-gold);
+            display: block;
+            font-size: 64px;
+        }
+
+        .hero p {
+            font-size: 20px;
             margin-bottom: 40px;
-            max-width: 700px;
-            opacity: 0.95;
-            animation: fadeInUp 1s ease-out 0.3s both;
-            font-weight: 500;
+            opacity: 0.9;
+            font-weight: 400;
+            line-height: 1.8;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+            color: var(--dark-bg);
+            padding: 18px 45px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+            margin-top: 20px;
         }
 
-        /* ===== Services Section ===== */
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+            border-color: var(--primary-gold);
+            background: transparent;
+            color: var(--primary-gold);
+        }
+
+        /* ===== MEGA BUTTONS - مركزة وأنيقة ===== */
+        .mega-contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+
+        .mega-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            padding: 22px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 20px;
+            transition: var(--transition);
+            min-width: 250px;
+            border: 2px solid transparent;
+        }
+
+        .mega-button.phone {
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+            color: var(--dark-bg);
+        }
+
+        .mega-button.whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+        }
+
+        .mega-button:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ===== SERVICES - بطاقات منظمة ===== */
         .services {
-            padding: var(--section-padding);
-            background-color: var(--light-color);
+            padding: var(--section-spacing);
+            background: var(--light-bg);
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
         }
 
         .service-card {
-            background: white;
-            padding: 45px 35px;
+            background: var(--card-bg);
             border-radius: var(--border-radius);
+            padding: 40px 30px;
             text-align: center;
             box-shadow: var(--shadow);
             transition: var(--transition);
+            border: 1px solid rgba(212, 175, 55, 0.1);
             position: relative;
             overflow: hidden;
-            border: 1px solid rgba(212, 165, 116, 0.2);
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
         }
 
         .service-card:hover {
-            transform: translateY(-15px);
+            transform: translateY(-10px);
             box-shadow: var(--shadow-hover);
+            border-color: var(--primary-gold);
         }
 
         .service-icon {
-            font-size: 60px;
+            font-size: 50px;
             margin-bottom: 25px;
-            color: var(--primary-color);
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            color: var(--primary-gold);
+            height: 80px;
+            width: 80px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
         }
 
         .service-card h3 {
-            font-size: 26px;
+            font-size: 24px;
             margin-bottom: 20px;
-            color: var(--dark-color);
+            color: var(--text-dark);
+            font-weight: 700;
         }
 
         .service-card p {
-            color: #666;
+            color: var(--text-light);
             font-size: 16px;
             line-height: 1.8;
         }
 
-        /* ===== Portfolio Section ===== */
+        /* ===== PORTFOLIO - معرض منظم ===== */
         .portfolio {
-            padding: var(--section-padding);
-            background-color: white;
+            padding: var(--section-spacing);
+            background: var(--card-bg);
         }
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 25px;
         }
 
         .gallery-item {
             position: relative;
-            overflow: hidden;
             border-radius: var(--border-radius);
+            overflow: hidden;
             aspect-ratio: 4/3;
             cursor: pointer;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
         }
 
         .gallery-item img {
@@ -484,284 +333,80 @@
             transition: transform 0.5s ease;
         }
 
-        .gallery-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(212, 165, 116, 0.2), rgba(26, 26, 26, 0.3));
-            opacity: 0;
-            transition: var(--transition);
-            z-index: 1;
-        }
-
-        .gallery-item::after {
-            content: '👁️ عرض الصورة';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-weight: 700;
-            font-size: 16px;
-            opacity: 0;
-            transition: var(--transition);
-            z-index: 2;
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 10px 20px;
-            border-radius: 30px;
-        }
-
-        .gallery-item:hover::before,
-        .gallery-item:hover::after {
-            opacity: 1;
-        }
-
         .gallery-item:hover img {
-            transform: scale(1.15);
+            transform: scale(1.1);
         }
 
-        /* ===== Location Section ===== */
-        .location {
-            padding: var(--section-padding);
-            background-color: var(--light-color);
-        }
-
-        .location-subtitle {
-            text-align: center;
-            font-size: 19px;
-            color: #666;
-            margin-bottom: 50px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.8;
-            font-weight: 500;
-        }
-
-        .areas-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .area-card {
-            background: white;
-            padding: 35px 30px;
-            border-radius: var(--border-radius);
-            text-align: center;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            border: 2px solid transparent;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .area-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--primary-color);
-        }
-
-        .area-icon {
-            font-size: 46px;
-            margin-bottom: 20px;
-            color: var(--primary-color);
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .area-card h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-            color: var(--dark-color);
-        }
-
-        .area-card p {
-            color: #666;
-            font-size: 15px;
-            line-height: 1.7;
-        }
-
-        /* ===== Testimonials Section - تصميم كريتيف أفقي ===== */
+        /* ===== TESTIMONIALS - تصميم أنيق ===== */
         .testimonials {
-            padding: var(--section-padding);
-            background: linear-gradient(135deg, #f9f5f0 0%, #f0e6d8 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .testimonials::before {
-            content: '';
-            position: absolute;
-            top: -100px;
-            right: -100px;
-            width: 300px;
-            height: 300px;
-            background-color: rgba(212, 165, 116, 0.1);
-            border-radius: 50%;
-            z-index: 0;
-        }
-
-        .testimonials::after {
-            content: '';
-            position: absolute;
-            bottom: -150px;
-            left: -150px;
-            width: 400px;
-            height: 400px;
-            background-color: rgba(212, 165, 116, 0.1);
-            border-radius: 50%;
-            z-index: 0;
-        }
-
-        .testimonials .container {
-            position: relative;
-            z-index: 1;
+            padding: var(--section-spacing);
+            background: linear-gradient(135deg, #F8F5F0 0%, #F0ECE3 100%);
         }
 
         .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
         }
 
         .testimonial-card {
-            background: white;
-            padding: 35px 30px 30px 30px;
+            background: var(--card-bg);
             border-radius: var(--border-radius);
+            padding: 35px 30px;
             box-shadow: var(--shadow);
             position: relative;
-            transition: var(--transition);
-            border: none;
-            overflow: hidden;
-            z-index: 1;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
+            border: 1px solid rgba(212, 175, 55, 0.1);
         }
 
         .testimonial-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 8px;
-            height: 100%;
-            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
-        }
-
-        .testimonial-card::after {
             content: '"';
             position: absolute;
-            top: 10px;
+            top: 20px;
             right: 30px;
-            font-size: 100px;
-            color: var(--primary-color);
+            font-size: 80px;
+            color: var(--primary-gold);
             opacity: 0.1;
             font-family: serif;
-            line-height: 1;
-            font-weight: bold;
-            z-index: -1;
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-        }
-
-        .testimonial-content {
-            position: relative;
-            z-index: 2;
-            flex-grow: 1;
         }
 
         .testimonial-content p {
             font-size: 16px;
             line-height: 1.8;
+            color: var(--text-light);
             margin-bottom: 25px;
-            color: #555;
             font-style: italic;
-            position: relative;
-            padding-right: 15px;
         }
 
         .client-info {
             display: flex;
             align-items: center;
             gap: 15px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
             padding-top: 20px;
-            border-top: 2px solid rgba(212, 165, 116, 0.2);
         }
 
         .client-avatar {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-weight: 800;
-            font-size: 20px;
-            flex-shrink: 0;
-            box-shadow: 0 5px 15px rgba(212, 165, 116, 0.4);
-            border: 2px solid white;
-        }
-
-        .client-details h4 {
-            font-size: 18px;
-            color: var(--dark-color);
-            margin-bottom: 5px;
-            font-weight: 800;
-        }
-
-        .client-details p {
-            font-size: 14px;
-            color: var(--primary-color);
-            margin: 0;
             font-weight: 700;
-            background-color: rgba(212, 165, 116, 0.15);
-            padding: 5px 12px;
-            border-radius: 20px;
-            display: inline-block;
-            border: 1px solid rgba(212, 165, 116, 0.3);
+            font-size: 18px;
         }
 
-        /* ===== Contact Section ===== */
+        /* ===== CONTACT - مركز وبسيط ===== */
         .contact {
-            padding: var(--section-padding);
-            background: linear-gradient(135deg, var(--dark-color) 0%, #2a2a2a 100%);
+            padding: var(--section-spacing);
+            background: var(--dark-bg);
             color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .contact::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none"/><path d="M0,50 Q25,40 50,50 T100,50" stroke="rgba(212,165,116,0.1)" stroke-width="2" fill="none"/><path d="M0,70 Q25,60 50,70 T100,70" stroke="rgba(212,165,116,0.1)" stroke-width="2" fill="none"/><path d="M0,30 Q25,20 50,30 T100,30" stroke="rgba(212,165,116,0.1)" stroke-width="2" fill="none"/></svg>');
-            opacity: 0.3;
-            z-index: 0;
-        }
-
-        .contact .container {
-            position: relative;
-            z-index: 1;
         }
 
         .contact .section-title {
-            color: var(--primary-color);
-        }
-
-        .contact .section-title::after {
-            background-color: var(--primary-color);
+            color: white;
         }
 
         .contact-content {
@@ -772,325 +417,186 @@
         }
 
         .contact-info h3 {
-            font-size: 32px;
+            font-size: 36px;
             margin-bottom: 25px;
-            color: white;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            color: var(--primary-gold);
         }
 
         .contact-description {
             font-size: 18px;
             line-height: 1.8;
-            margin-bottom: 30px;
-            opacity: 0.95;
-            font-weight: 500;
-        }
-
-        .contact-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .contact-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            padding: 20px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 18px;
-            transition: var(--transition);
-            border: 2px solid transparent;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        .phone-button {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: var(--dark-color);
-        }
-
-        .phone-button:hover {
-            background: transparent;
-            color: var(--primary-color);
-            border-color: var(--primary-color);
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(212, 165, 116, 0.4);
-        }
-
-        .whatsapp-button {
-            background: linear-gradient(135deg, #25D366, #128C7E);
-            color: white;
-        }
-
-        .whatsapp-button:hover {
-            background: transparent;
-            color: #25D366;
-            border-color: #25D366;
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
-        }
-
-        .button-icon {
-            font-size: 22px;
+            margin-bottom: 40px;
+            opacity: 0.9;
         }
 
         .contact-details {
-            background-color: rgba(255, 255, 255, 0.08);
-            padding: 35px 30px;
+            background: rgba(255, 255, 255, 0.05);
             border-radius: var(--border-radius);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .contact-details h4 {
-            font-size: 24px;
-            margin-bottom: 25px;
-            color: var(--primary-color);
-            text-align: center;
+            padding: 40px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
         }
 
         .contact-item {
             display: flex;
             align-items: center;
             gap: 20px;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .contact-item:last-child {
-            border-bottom: none;
             margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
         }
 
         .contact-item .icon {
             font-size: 24px;
-            color: var(--primary-color);
-            min-width: 40px;
+            color: var(--primary-gold);
+            width: 50px;
             text-align: center;
         }
 
         .contact-item a {
             color: white;
             text-decoration: none;
-            font-weight: 700;
-            font-size: 16px;
+            font-weight: 600;
+            font-size: 18px;
             transition: var(--transition);
-            display: block;
         }
 
         .contact-item a:hover {
-            color: var(--primary-color);
-            transform: translateX(5px);
+            color: var(--primary-gold);
         }
 
-        .contact-item p {
-            margin: 5px 0 0;
-            font-size: 14px;
-            opacity: 0.9;
-        }
-
-        /* ===== Footer ===== */
+        /* ===== FOOTER ===== */
         .footer {
-            background-color: var(--dark-color);
+            background: var(--dark-bg);
             color: white;
+            padding: 60px 0 40px;
             text-align: center;
-            padding: 50px 0 40px;
-            border-top: 5px solid var(--primary-color);
-            position: relative;
-        }
-
-        .footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: radial-gradient(circle at 20% 50%, rgba(212, 165, 116, 0.05) 0%, transparent 50%),
-                              radial-gradient(circle at 80% 20%, rgba(212, 165, 116, 0.05) 0%, transparent 50%);
-        }
-
-        .footer .container {
-            position: relative;
-            z-index: 1;
+            border-top: 2px solid var(--primary-gold);
         }
 
         .footer-logo {
             font-size: 32px;
             font-weight: 900;
-            color: var(--primary-color);
+            color: var(--primary-gold);
             margin-bottom: 20px;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-        }
-
-        .footer p {
-            margin: 12px 0;
-            font-size: 16px;
-            opacity: 0.9;
         }
 
         .footer-contact {
             display: flex;
             justify-content: center;
-            gap: 30px;
-            margin: 25px 0;
+            gap: 40px;
+            margin: 30px 0;
             flex-wrap: wrap;
         }
 
         .footer-contact a {
-            color: var(--primary-color);
+            color: white;
             text-decoration: none;
-            font-weight: 700;
-            font-size: 18px;
+            font-weight: 600;
             transition: var(--transition);
         }
 
         .footer-contact a:hover {
+            color: var(--primary-gold);
+        }
+
+        /* ===== FLOATING BUTTONS - مصغرة ===== */
+        .floating-buttons {
+            position: fixed;
+            left: 30px;
+            bottom: 30px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .floating-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
             color: white;
-            transform: translateY(-3px);
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
         }
 
-        /* ===== Responsive Design ===== */
-        @media (max-width: 1200px) {
-            .floating-buttons {
-                left: 30px;
-                bottom: 30px;
-            }
-            
-            .mega-button {
-                padding: 22px 40px;
-                font-size: 22px;
-                min-width: 250px;
-            }
+        .floating-button.phone {
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
         }
 
+        .floating-button.whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+        }
+
+        .floating-button:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
         @media (max-width: 992px) {
-            .hero-overlay h1 {
+            .hero h1 {
                 font-size: 48px;
             }
             
-            .hero-overlay p {
-                font-size: 20px;
+            .hero h1 .highlight {
+                font-size: 52px;
             }
             
             .contact-content {
+                grid-template-columns: 1fr;
                 gap: 40px;
             }
             
-            .floating-buttons {
-                left: 25px;
-                bottom: 25px;
-            }
-            
-            .floating-button {
-                width: 70px;
-                height: 70px;
-                font-size: 28px;
-            }
-            
-            .floating-button::after {
-                left: 80px;
-                font-size: 14px;
-                padding: 8px 15px;
-            }
-            
-            .mega-button {
-                padding: 20px 35px;
-                font-size: 20px;
-                min-width: 220px;
-            }
-            
-            .testimonials-grid {
-                grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            .nav-links {
+                gap: 20px;
             }
         }
 
         @media (max-width: 768px) {
-            .navbar {
-                padding: 12px 0;
+            .hero {
+                min-height: 600px;
+                margin-top: 70px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero h1 .highlight {
+                font-size: 40px;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .nav-links {
+                display: none;
             }
             
             .mobile-menu-btn {
                 display: block;
+                background: none;
+                border: none;
+                color: white;
+                font-size: 24px;
+                cursor: pointer;
             }
-
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                right: -100%;
-                flex-direction: column;
-                background-color: var(--dark-color);
+            
+            .mega-button {
                 width: 100%;
-                text-align: center;
-                transition: 0.3s;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-                padding: 25px 0;
-                gap: 0;
-                z-index: 998;
-            }
-
-            .nav-links.active {
-                right: 0;
-            }
-
-            .nav-links li {
-                margin: 18px 0;
-            }
-
-            .hero {
-                height: 85vh;
-                min-height: 500px;
-                margin-top: 70px;
-            }
-
-            .hero-overlay h1 {
-                font-size: 36px;
-            }
-
-            .hero-overlay p {
-                font-size: 18px;
-                padding: 0 20px;
-            }
-
-            .section-title {
-                font-size: 32px;
-                margin-bottom: 45px;
-            }
-
-            .services-grid,
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .areas-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-content {
-                grid-template-columns: 1fr;
-                gap: 50px;
-            }
-            
-            .cta-button,
-            .contact-button {
-                padding: 18px 40px;
-                font-size: 18px;
-            }
-            
-            .service-card,
-            .testimonial-card,
-            .area-card {
-                padding: 35px 25px;
+                max-width: 300px;
             }
             
             .floating-buttons {
@@ -1099,179 +605,93 @@
             }
             
             .floating-button {
-                width: 65px;
-                height: 65px;
-                font-size: 26px;
-            }
-            
-            .floating-button::after {
-                display: none;
-            }
-            
-            .client-info {
-                flex-direction: column;
-                text-align: center;
-                gap: 15px;
-            }
-            
-            .client-avatar {
                 width: 55px;
                 height: 55px;
-                font-size: 18px;
-            }
-            
-            .mega-contact-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .mega-button {
-                width: 100%;
-                max-width: 300px;
-                padding: 18px 30px;
-                font-size: 18px;
+                font-size: 22px;
             }
         }
 
         @media (max-width: 576px) {
-            .hero-overlay h1 {
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .hero h1 .highlight {
                 font-size: 32px;
             }
-
-            .hero-overlay p {
+            
+            .hero p {
                 font-size: 16px;
             }
-
-            .cta-button {
-                padding: 16px 35px;
-                font-size: 16px;
-            }
-
+            
             .section-title {
                 font-size: 28px;
             }
-
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
             
-            .contact-buttons {
-                gap: 15px;
-            }
-            
-            .contact-button {
-                padding: 18px 25px;
-                font-size: 16px;
-            }
-            
-            .button-icon {
-                font-size: 20px;
-            }
-            
-            .floating-buttons {
-                left: 15px;
-                bottom: 15px;
-            }
-            
-            .floating-button {
-                width: 60px;
-                height: 60px;
-                font-size: 24px;
-            }
-            
-            .footer-contact {
-                flex-direction: column;
-                gap: 15px;
+            .service-card,
+            .testimonial-card {
+                padding: 30px 20px;
             }
             
             .mega-button {
-                padding: 16px 25px;
-                font-size: 16px;
-                min-width: auto;
-            }
-            
-            .mega-button .icon {
-                font-size: 24px;
-            }
-            
-            .testimonial-card {
-                padding: 25px 20px 20px 20px;
-            }
-            
-            .testimonial-content p {
-                font-size: 15px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-overlay h1 {
-                font-size: 28px;
-            }
-
-            .hero-overlay p {
-                font-size: 15px;
-            }
-
-            .cta-button {
-                padding: 14px 30px;
-                font-size: 15px;
-            }
-
-            .section-title {
-                font-size: 26px;
-            }
-            
-            .testimonial-content p {
-                font-size: 14px;
+                padding: 18px 25px;
+                font-size: 18px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Floating Action Buttons -->
+    <!-- Floating Buttons -->
     <div class="floating-buttons">
-        <a href="tel:+966542906096" onclick="gtag('event','conversion',{'send_to':'AW-17822392392/phone_call'});" class="floating-button phone" data-tooltip="اتصل الآن">
+        <a href="tel:+966542906096" onclick="gtag('event','conversion',{'send_to':'AW-17822392392/phone_call'});" class="floating-button phone">
             <i class="fas fa-phone"></i>
         </a>
-        <a href="https://wa.me/966542906096" onclick="gtag('event','conversion',{'send_to':'AW-17822392392/phone_call'});" target="_blank" class="floating-button whatsapp" data-tooltip="واتساب">
+        <a href="https://wa.me/966542906096" onclick="gtag('event','conversion',{'send_to':'AW-17822392392/phone_call'});" target="_blank" class="floating-button whatsapp">
             <i class="fab fa-whatsapp"></i>
         </a>
     </div>
 
-    <!-- Navigation Bar -->
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
-            <a href="#" class="logo">النخبة للتشطيبات</a>
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-links" id="navLinks">
+            <a href="#" class="logo">
+                <i class="fas fa-crown"></i>
+                النخبة <span>للتشطيبات</span>
+            </a>
+            <ul class="nav-links">
                 <li><a href="#services">خدماتنا</a></li>
-                <li><a href="#portfolio">معرض الأعمال</a></li>
-                <li><a href="#location">المناطق التي نغطيها</a></li>
+                <li><a href="#portfolio">أعمالنا</a></li>
                 <li><a href="#testimonials">آراء العملاء</a></li>
                 <li><a href="#contact">تواصل معنا</a></li>
             </ul>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <img src="assets/hero.jpeg" alt="أعمال لياسة فاخرة" class="hero-image">
-            <div class="hero-overlay">
-                <h1>التميز في التشطيبات الفاخرة <br> عبر جميع أحياء الرياض</h1>
-                <p>نغطي كافة مناطق الرياض بأعمال اللياسة والترميم والتشطيبات الفاخرة، نصل إليكم أينما كنتم في العاصمة</p>
+        <div class="container">
+            <div class="hero-content">
+                <h1>
+                    تشطيبات فاخرة
+                    <span class="highlight">بلمسة نخبة</span>
+                    تغطي جميع أحياء الرياض
+                </h1>
+                <p>
+                    نحول رؤيتك إلى واقع مع تشطيبات متقنة تجمع بين الأناقة المعاصرة والجودة العالية. 
+                    نعمل في جميع مناطق الرياض بفريق متخصص وخبرة تمتد لسنوات.
+                </p>
                 <a href="#contact" class="cta-button">اطلب عرض سعر مجاني</a>
                 
-                <!-- أزرار التواصل العملاقة -->
                 <div class="mega-contact-buttons">
-                    <a href="tel:+966542906096" onclick="gtag('event','conversion',{'send_to':'AW-17822392392/phone_call'});" class="mega-button mega-phone">
-                        <i class="fas fa-phone icon"></i>
-                        اتصل الآن
+                    <a href="tel:+966542906096" onclick="gtag('event','conversion',{'send_to':'AW-17822392392/phone_call'});" class="mega-button phone">
+                        <i class="fas fa-phone"></i>
+                        اتصل الآن 0542906096
                     </a>
-                    <a href="https://wa.me/966542906096" onclick="gtag('event','conversion',{'send_to':'AW-17822392392/phone_call'});" target="_blank" class="mega-button mega-whatsapp">
-                        <i class="fab fa-whatsapp icon"></i>
+                    <a href="https://wa.me/966542906096" onclick="gtag('event','conversion',{'send_to':'AW-17822392392/phone_call'});" target="_blank" class="mega-button whatsapp">
+                        <i class="fab fa-whatsapp"></i>
                         واتساب مباشر
                     </a>
                 </div>
@@ -1282,155 +702,55 @@
     <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
-            <h2 class="section-title">خدماتنا المتخصصة</h2>
+            <h2 class="section-title">خدماتنا <span class="gold-text">المتميزة</span></h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">🏛️</div>
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
                     <h3>لياسة القصور والفلل</h3>
                     <p>تنفيذ أعمال اللياسة للمشاريع السكنية الفاخرة بدقة عالية وتفاصيل استثنائية.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">🔧</div>
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
                     <h3>الترميم وإعادة التأهيل</h3>
                     <p>إعادة تأهيل المباني القديمة وحلول ترميم مبتكرة تحافظ على الجمالية والقوة.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">✨</div>
-                    <h3>المشاريع التجارية الراقية</h3>
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>المشاريع التجارية</h3>
                     <p>تنفيذ أعمال التشطيبات الداخلية والخارجية للمعارض والمطاعم والمكاتب الفاخرة.</p>
                 </div>
             </div>
         </div>
     </section>
 
-<!-- Portfolio Section -->
-<section id="portfolio" class="portfolio">
-    <div class="container">
-        <h2 class="section-title">معرض أعمالنا</h2>
-        <div class="gallery-grid">
-            <!-- الصورة الأولى -->
-            <div class="gallery-item">
-                <img src="assets/7f63de998285165b56108b748dd406a3.jpg" alt="مشروع تشطيب فاخر">
-            </div>
-            
-            <!-- الصورة الثانية -->
-            <div class="gallery-item">
-                <img src="assets/Ali.webp" alt="تشطيبات داخلية حديثة">
-            </div>
-            
-            <!-- الصورة الثالثة -->
-            <div class="gallery-item">
-                <img src="assets/An.jpg" alt="تصميم داخلي عصري">
-            </div>
-            
-            <!-- الصورة الرابعة -->
-            <div class="gallery-item">
-                <img src="assets/gallery_1.webp" alt="تشطيبات خارجية">
-            </div>
-            
-            <!-- الصورة الخامسة -->
-            <div class="gallery-item">
-                <img src="assets/gallery_2.jpg" alt="لياسة فاخرة">
-            </div>
-            
-            <!-- الصورة السادسة -->
-            <div class="gallery-item">
-                <img src="assets/gallery_3.jpg" alt="فيلا حديثة">
-            </div>
-            
-            <!-- الصورة السابعة -->
-            <div class="gallery-item">
-                <img src="assets/gallery_4.jpg" alt="تشطيبات معاصرة">
-            </div>
-            
-            <!-- الصورة الثامنة -->
-            <div class="gallery-item">
-                <img src="assets/gallery_5.webp" alt="تصميم خارجي">
-            </div>
-            
-            <!-- الصورة التاسعة -->
-            <div class="gallery-item">
-                <img src="assets/gallery_6.jpg" alt="مشروع ترميم">
-            </div>
-            
-            <!-- الصورة العاشرة -->
-            <div class="gallery-item">
-                <img src="assets/hero.jpeg" alt="تشطيبات حديثة">
-            </div>
-            
-            <!-- الصورة الحادية عشر -->
-            <div class="gallery-item">
-                <img src="assets/K.png" alt="تصميم فاخر">
-            </div>
-            
-            <!-- الصورة الثانية عشر -->
-            <div class="gallery-item">
-                <img src="assets/Mm.jpg" alt="تصميم فاخر">
-            </div>
-            
-            <!-- الصورة الثالثة عشر -->
-            <div class="gallery-item">
-                <img src="assets/Mode.webp" alt="واجهات فيلات">
-            </div>
-            
-            <!-- الصورة الرابعة عشر -->
-            <div class="gallery-item">
-                <img src="assets/Yo.jpg" alt="تشطيبات متكاملة">
-            </div>
-            
-            <!-- الصورة الخامسة عشر -->
-            <div class="gallery-item">
-                <img src="assets/Yom.jpg" alt="تصميم داخلي">
-            </div>
-            
-            <!-- الصورة السادسة عشر -->
-            <div class="gallery-item">
-                <img src="assets/Yomna.webp" alt="تصميم داخلي فاخر">
-            </div>
-            
-            <!-- الصورة السابعة عشر -->
-            <div class="gallery-item">
-                <img src="assets/hero.jpeg" alt="تصميم داخلي حديث">
-            </div>
-        </div>
-    </div>
-</section>
-    <!-- Location Section -->
-    <section id="location" class="location">
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
         <div class="container">
-            <h2 class="section-title">نغطي جميع أحياء الرياض</h2>
-            <p class="location-subtitle">نعمل في جميع مناطق الرياض الرئيسية والفرعية، ونسعى لتقديم خدماتنا في كل حي من أحياء العاصمة بأعلى معايير الجودة</p>
-            
-            <div class="areas-grid">
-                <div class="area-card">
-                    <div class="area-icon">🏘️</div>
-                    <h3>الشمالية</h3>
-                    <p>الملز، العليا، العريجاء، النخيل، المرسلات</p>
+            <h2 class="section-title">معرض <span class="gold-text">أعمالنا</span></h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="assets/gallery_1.webp" alt="تشطيب فاخر">
                 </div>
-                <div class="area-card">
-                    <div class="area-icon">🏙️</div>
-                    <h3>الوسطى</h3>
-                    <p>الربوة، الملز، البطحاء، الفوطة، المنصورة</p>
+                <div class="gallery-item">
+                    <img src="assets/gallery_2.jpg" alt="تشطيب داخلي">
                 </div>
-                <div class="area-card">
-                    <div class="area-icon">🏡</div>
-                    <h3>الغربية</h3>
-                    <p>النسيم، الشفا، طيبة، المصيف، البديعة</p>
+                <div class="gallery-item">
+                    <img src="assets/gallery_3.jpg" alt="تصميم حديث">
                 </div>
-                <div class="area-card">
-                    <div class="area-icon">🏛️</div>
-                    <h3>الشرقية</h3>
-                    <p>اليرموك، النظيم، العدام، حي الإسكان</p>
+                <div class="gallery-item">
+                    <img src="assets/gallery_4.jpg" alt="لياسة عالية الجودة">
                 </div>
-                <div class="area-card">
-                    <div class="area-icon">🏰</div>
-                    <h3>الجنوبية</h3>
-                    <p>الشفا، طيبة، الخزامى، الشعلة، المصيف</p>
+                <div class="gallery-item">
+                    <img src="assets/gallery_5.webp" alt="ترميم متقن">
                 </div>
-                <div class="area-card">
-                    <div class="area-icon">🎯</div>
-                    <h3>الأحياء الفاخرة</h3>
-                    <p>اليرموك، النرجس، الربيع، الصحافة، الحمراء</p>
+                <div class="gallery-item">
+                    <img src="assets/gallery_6.jpg" alt="تشطيب تجاري">
                 </div>
             </div>
         </div>
@@ -1439,77 +759,29 @@
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials">
         <div class="container">
-            <h2 class="section-title">آراء عملائنا من مختلف أحياء الرياض</h2>
+            <h2 class="section-title">آراء <span class="gold-text">عملائنا</span></h2>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        <p>"الله يعطيهم العافية، شغلهم مرتب ونظيف. سووا لي تشطيب الفيلا في النرجس وما قصر، كل التفاصيل كانت مضبوطة والوقت محترم."</p>
-                        <div class="client-info">
-                            <div class="client-avatar">أ</div>
-                            <div class="client-details">
-                                <h4>أحمد السليمان</h4>
-                                <p>حي النرجس - الرياض</p>
-                            </div>
+                        <p>"أفضل فريق تشطيبات في الرياض، الشغل نظيف والتزام بالمواعيد ممتاز. أنصح بهم بشدة."</p>
+                    </div>
+                    <div class="client-info">
+                        <div class="client-avatar">أ</div>
+                        <div>
+                            <h4>أحمد السليمان</h4>
+                            <p>حي النرجس - الرياض</p>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        <p>"من زمان وأنا أدور على فريق شغله متقن، الحمدلله لقيت النخبة. سووا ترميم للبيت القديم في البطحاء وأعادوه أحسن من الأول."</p>
-                        <div class="client-info">
-                            <div class="client-avatar">ف</div>
-                            <div class="client-details">
-                                <h4>فهد الرشيد</h4>
-                                <p>حي البطحاء - الرياض</p>
-                            </div>
-                        </div>
+                        <p>"منذ سنوات وأنا أتعامل معهم، جودة العمل تتحدث عن نفسها. مهنية عالية واهتمام بالتفاصيل."</p>
                     </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"الشغل نظيف والتزام بالمواعيد نادر تلاقيه. في الربيع سووا لي لياسة القصر والنتيجة كانت تخطي التوقعات. أنصح فيهم الجميع."</p>
-                        <div class="client-info">
-                            <div class="client-avatar">ن</div>
-                            <div class="client-details">
-                                <h4>ناصر الشمري</h4>
-                                <p>حي الربيع - الرياض</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"أنا من سكان الياسمين، جربت كثير شركات تشطيبات لكن النخبة مختلفين. الدقة في العمل والاهتمام بالتفاصيل الصغيرة ممتاز."</p>
-                        <div class="client-info">
-                            <div class="client-avatar">ل</div>
-                            <div class="client-details">
-                                <h4>لولوة العتيبي</h4>
-                                <p>حي الياسمين - الرياض</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"فِي حي الصحافة عندي شقة، النخبة سووا لي تشطيب كامل في وقت قياسي والشغل أنيق ومرتب. الأسعار مناسبة للجودة اللي يقدمونها."</p>
-                        <div class="client-info">
-                            <div class="client-avatar">خ</div>
-                            <div class="client-details">
-                                <h4>خالد المطيري</h4>
-                                <p>حي الصحافة - الرياض</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        <p>"في العليا سووا لي تشطيب مكتبي، ما توقعت النتيجة بتكون بهالجمال. المهنية والتواصل المستمر مع العملاء شيء مميز عندهم."</p>
-                        <div class="client-info">
-                            <div class="client-avatar">م</div>
-                            <div class="client-details">
-                                <h4>محمد القحطاني</h4>
-                                <p>حي العليا - الرياض</p>
-                            </div>
+                    <div class="client-info">
+                        <div class="client-avatar">ف</div>
+                        <div>
+                            <h4>فهد الرشيد</h4>
+                            <p>حي البطحاء - الرياض</p>
                         </div>
                     </div>
                 </div>
@@ -1520,61 +792,49 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">تواصل معنا الآن</h2>
+            <h2 class="section-title">تواصل <span class="gold-text">معنا</span></h2>
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>اتصل بنا مباشرة</h3>
+                    <h3>نحن هنا من أجلك</h3>
                     <p class="contact-description">
-                        نحن جاهزون للرد على استفساراتكم وتقديم عروض أسعار مجانية. 
-                        اتصل بنا الآن للحصول على استشارة مجانية وتقييم لمشروعك.
+                        مستعدون للإجابة على جميع استفساراتكم وتقديم عروض أسعار تناسب احتياجاتكم. 
+                        اتصل بنا الآن للحصول على استشارة مجانية.
                     </p>
                     
-                    <div class="contact-buttons">
-                        <a href="tel:+966542906096" onclick="gtag('event','conversion',{'send_to':'AW-17822392392/phone_call'});" class="contact-button phone-button">
-                            <i class="fas fa-phone button-icon"></i>
-                            اتصل بنا الآن: 0542906096
+                    <div class="mega-contact-buttons">
+                        <a href="tel:+966542906096" onclick="gtag('event','conversion',{'send_to':'AW-17822392392/phone_call'});" class="mega-button phone">
+                            <i class="fas fa-phone"></i>
+                            اتصل بنا الآن
                         </a>
-                        
-                        <a href="https://wa.me/966542906096" onclick="gtag('event','conversion',{'send_to':'AW-17822392392/phone_call'});" target="_blank" class="contact-button whatsapp-button">
-                            <i class="fab fa-whatsapp button-icon"></i>
-                            تواصل عبر واتساب
+                        <a href="https://wa.me/966542906096" onclick="gtag('event','conversion',{'send_to':'AW-17822392392/phone_call'});" target="_blank" class="mega-button whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                            واتساب مباشر
                         </a>
                     </div>
                 </div>
                 
                 <div class="contact-details">
-                    <h4>معلومات التواصل</h4>
                     <div class="contact-item">
-                        <span class="icon">📱</span>
+                        <div class="icon"><i class="fas fa-phone"></i></div>
                         <div>
+                            <a href="tel:+966542906096">+966 54 290 6096</a>
                             <p>الهاتف والواتساب</p>
-                            <a href="tel:+966542906096" onclick="gtag('event','conversion',{'send_to':'AW-17822392392/phone_call'});">+966 54 290 6096</a>
                         </div>
                     </div>
                     
                     <div class="contact-item">
-                        <span class="icon">💬</span>
+                        <div class="icon"><i class="fab fa-whatsapp"></i></div>
                         <div>
-                            <p>الواتساب مباشر</p>
-                            <a href="https://wa.me/966542906096" onclick="gtag('event','conversion',{'send_to':'AW-17822392392/phone_call'});" target="_blank">
-                                اضغط للتواصل فوراً
-                            </a>
+                            <a href="https://wa.me/966542906096" target="_blank">اضغط للتواصل عبر واتساب</a>
+                            <p>رد سريع ومباشر</p>
                         </div>
                     </div>
                     
                     <div class="contact-item">
-                        <span class="icon">📍</span>
+                        <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
                         <div>
-                            <p>الموقع الجغرافي</p>
-                            <p>الرياض - نغطي جميع الأحياء</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <span class="icon">💼</span>
-                        <div>
-                            <p>خدماتنا</p>
-                            <p>لياسة، ترميم، تشطيبات فاخرة</p>
+                            <p>الرياض - جميع الأحياء</p>
+                            <p>نغطي كافة مناطق العاصمة</p>
                         </div>
                     </div>
                 </div>
@@ -1585,39 +845,29 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-logo">النخبة للتشطيبات</div>
-            <p>متخصصون في التشطيبات والترميم الفاخر - نغطي جميع أحياء الرياض</p>
-            <div class="footer-contact">
-                <a href="tel:+966542906096" onclick="gtag('event','conversion',{'send_to':'AW-17822392392/phone_call'});">الهاتف: +966 54 290 6096</a>
-                <a href="https://wa.me/966542906096" onclick="gtag('event','conversion',{'send_to':'AW-17822392392/phone_call'});" target="_blank">الواتساب: اضغط هنا</a>
+            <div class="footer-logo">
+                <i class="fas fa-crown"></i> النخبة للتشطيبات
             </div>
-            <p>نعمل في جميع أنحاء الرياض</p>
-            <p>&copy; 2024 النخبة للتشطيبات. جميع الحقوق محفوظة.</p>
+            <p>متخصصون في التشطيبات والترميم الفاخر</p>
+            <div class="footer-contact">
+                <a href="tel:+966542906096">0542906096</a>
+                <a href="https://wa.me/966542906096" target="_blank">واتساب</a>
+            </div>
+            <p>نغطي جميع أحياء الرياض بأعلى معايير الجودة</p>
+            <p style="margin-top: 20px; opacity: 0.7;">© 2024 النخبة للتشطيبات. جميع الحقوق محفوظة.</p>
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script>
         // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
-
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
         mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
         });
 
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            });
-        });
-
-        // Navbar scroll effect
+        // Navbar Scroll Effect
         window.addEventListener('scroll', () => {
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 50) {
@@ -1627,11 +877,10 @@
             }
         });
 
-        // Smooth scrolling for anchor links
+        // Smooth Scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
                 
@@ -1645,49 +894,18 @@
             });
         });
 
-        // Track phone call clicks with Google Analytics
-        document.querySelectorAll('a[href^="tel:"]').forEach(link => {
-            link.addEventListener('click', function() {
-                gtag('event', 'phone_call', {
-                    'event_category': 'Contact',
-                    'event_label': 'Phone Call Click',
-                    'value': this.href
-                });
-                console.log('تم النقر على رابط الهاتف: ' + this.href);
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navLinks.style.display = 'none';
+                }
             });
         });
 
-        // Track WhatsApp clicks with Google Analytics
-        document.querySelectorAll('a[href*="whatsapp"]').forEach(link => {
-            link.addEventListener('click', function() {
-                gtag('event', 'whatsapp_click', {
-                    'event_category': 'Contact',
-                    'event_label': 'WhatsApp Click'
-                });
-                console.log('تم النقر على رابط الواتساب');
-            });
-        });
-
-        // Track CTA button clicks with Google Analytics
-        document.querySelectorAll('.cta-button').forEach(button => {
-            button.addEventListener('click', function() {
-                gtag('event', 'cta_click', {
-                    'event_category': 'Conversion',
-                    'event_label': 'Request Free Quote'
-                });
-            });
-        });
-
-        // Track gallery image clicks with Google Analytics
-        const galleryItems = document.querySelectorAll('.gallery-item');
-        galleryItems.forEach(item => {
+        // Gallery Modal
+        document.querySelectorAll('.gallery-item').forEach(item => {
             item.addEventListener('click', function() {
-                const imgAlt = this.querySelector('img').alt;
-                gtag('event', 'gallery_click', {
-                    'event_category': 'Portfolio',
-                    'event_label': imgAlt
-                });
-                
                 const imgSrc = this.querySelector('img').src;
                 const modal = document.createElement('div');
                 modal.style.cssText = `
@@ -1696,7 +914,7 @@
                     left: 0;
                     width: 100%;
                     height: 100%;
-                    background-color: rgba(0, 0, 0, 0.95);
+                    background: rgba(0,0,0,0.95);
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -1711,7 +929,6 @@
                     max-height: 90%;
                     object-fit: contain;
                     border-radius: 10px;
-                    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
                 `;
                 
                 modal.appendChild(modalImg);
@@ -1720,65 +937,27 @@
                 modal.addEventListener('click', () => {
                     document.body.removeChild(modal);
                 });
-                
-                // Close modal with ESC key
-                document.addEventListener('keydown', function closeModal(e) {
-                    if (e.key === 'Escape') {
-                        document.body.removeChild(modal);
-                        document.removeEventListener('keydown', closeModal);
-                    }
-                });
             });
         });
 
-        // Track form submission (if any)
-        const contactButtons = document.querySelectorAll('.contact-button');
-        contactButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const buttonType = this.classList.contains('phone-button') ? 'Phone' : 'WhatsApp';
-                gtag('event', 'contact_click', {
+        // Analytics Tracking
+        document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+            link.addEventListener('click', function() {
+                gtag('event', 'phone_call', {
                     'event_category': 'Contact',
-                    'event_label': buttonType + ' Contact'
+                    'event_label': 'Phone Call'
                 });
             });
         });
 
-        // Initialize on page load
-        window.addEventListener('load', () => {
-            // Track page view
-            gtag('event', 'page_view', {
-                'page_title': document.title,
-                'page_location': window.location.href
-            });
-            
-            // Add fade-in animation to sections on scroll
-            const sections = document.querySelectorAll('section');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                        
-                        // Track section view
-                        const sectionId = entry.target.id || 'unnamed_section';
-                        gtag('event', 'section_view', {
-                            'event_category': 'Engagement',
-                            'event_label': sectionId
-                        });
-                    }
+        document.querySelectorAll('a[href*="whatsapp"]').forEach(link => {
+            link.addEventListener('click', function() {
+                gtag('event', 'whatsapp_click', {
+                    'event_category': 'Contact',
+                    'event_label': 'WhatsApp'
                 });
-            }, {
-                threshold: 0.1
-            });
-
-            sections.forEach(section => {
-                section.style.opacity = '0';
-                section.style.transform = 'translateY(30px)';
-                section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-                observer.observe(section);
             });
         });
     </script>
 </body>
-</html>
+        </html>
