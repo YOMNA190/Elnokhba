@@ -3,710 +3,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>كمبروسور اكسبريس | الحراس الصامتون</title>
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="حلول هندسية متقدمة لمشاكل الصرف الصحي في الرياض. نحن الحراس الصامتون الذين يعملون تحت الأرض لتستمتع بالسلام فوقها.">
-    <meta name="keywords" content="كمبروسور, صرف صحي, تسليك مجاري, تنظيف بيارات, الرياض, خدمة طوارئ">
-    <meta name="author" content="كمبروسور اكسبريس">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="كمبروسور اكسبريس | الحراس الصامتون">
-    <meta property="og:description" content="فريق العمليات الخاص للصرف الصحي في الرياض">
-    <meta property="og:type" content="website">
-    
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "كمبروسور اكسبريس",
-      "description": "فريق متخصص في حلول الصرف الصحي المتقدمة بالرياض",
-      "telephone": "+966541828791",
-      "areaServed": "الرياض",
-      "availableLanguage": "Arabic"
-    }
-    </script>
-    
-    <!-- Fonts & Icons -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>النخبة للتشطيبات | لياسة وترميم فاخر بالرياض</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --primary-dark: #111827;
-            --secondary-dark: #1F2937;
-            --accent-yellow: #FBBF24;
-            --text-light: #F3F4F6;
-            --text-muted: #9CA3AF;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Cairo', sans-serif;
-            background-color: var(--primary-dark);
-            color: var(--text-light);
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
-
-        /* Glass Morphism */
-        .glass {
-            background: rgba(17, 24, 39, 0.8);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .glass-light {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        /* Header */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            padding: 1rem 0;
-            transition: all 0.3s ease;
-        }
-
-        .header.scrolled {
-            padding: 0.75rem 0;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            position: relative;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(17, 24, 39, 0.9) 0%, rgba(17, 24, 39, 0.7) 100%);
-            z-index: 1;
-        }
-
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            filter: blur(2px);
-            transform: scale(1.1);
-        }
-
-        /* Button Styles */
-        .btn-primary {
-            background: linear-gradient(135deg, var(--accent-yellow), #F59E0B);
-            color: var(--primary-dark);
-            padding: 1rem 2.5rem;
-            border-radius: 0.5rem;
-            font-weight: 700;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(251, 191, 36, 0.4);
-        }
-
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: 0.5s;
-        }
-
-        .btn-primary:hover::before {
-            left: 100%;
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--text-light);
-            padding: 1rem 2.5rem;
-            border-radius: 0.5rem;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s ease;
-            border: 2px solid rgba(251, 191, 36, 0.3);
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--accent-yellow);
-            transform: translateY(-2px);
-        }
-
-        /* Service Cards */
-        .service-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 1rem;
-            padding: 2.5rem;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--accent-yellow);
-            box-shadow: 0 20px 40px rgba(251, 191, 36, 0.1);
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, var(--accent-yellow), transparent);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .service-card:hover::before {
-            opacity: 1;
-        }
-
-        /* Floating Action Buttons */
-        .fab-container {
-            position: fixed;
-            bottom: 2rem;
-            left: 2rem;
-            z-index: 100;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .fab {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-decoration: none;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .fab:hover {
-            transform: scale(1.1);
-        }
-
-        .fab.whatsapp {
-            background: linear-gradient(135deg, #25D366, #128C7E);
-            animation: pulse-green 2s infinite;
-        }
-
-        .fab.phone {
-            background: linear-gradient(135deg, var(--accent-yellow), #F59E0B);
-            animation: pulse-yellow 2s infinite;
-            cursor: pointer;
-        }
-
-        @keyframes pulse-green {
-            0% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-            }
-        }
-
-        @keyframes pulse-yellow {
-            0% {
-                box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 15px rgba(251, 191, 36, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(251, 191, 36, 0);
-            }
-        }
-
-        /* Section Reveal Animation */
-        .reveal {
-            opacity: 0;
-            transform: translateY(60px);
-            transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Bat Signal Animation */
-        @keyframes bat-signal {
-            0%, 100% {
-                opacity: 0.3;
-                transform: scale(1);
-            }
-            50% {
-                opacity: 1;
-                transform: scale(1.1);
-            }
-        }
-
-        .bat-signal {
-            animation: bat-signal 2s ease-in-out infinite;
-        }
-
-        /* Typography */
-        .heading-1 {
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
-            font-weight: 900;
-            line-height: 1.1;
-            background: linear-gradient(135deg, var(--text-light), var(--text-muted));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .heading-2 {
-            font-size: clamp(2rem, 4vw, 3.5rem);
-            font-weight: 800;
-            line-height: 1.2;
-        }
-
-        .heading-3 {
-            font-size: clamp(1.5rem, 3vw, 2.5rem);
-            font-weight: 700;
-            line-height: 1.3;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .fab-container {
-                bottom: 1rem;
-                left: 1rem;
-            }
-            
-            .fab {
-                width: 50px;
-                height: 50px;
-            }
-            
-            .hero-bg {
-                background-attachment: scroll;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <!-- Floating Action Buttons -->
-    <div class="fab-container">
-        <a href="https://wa.me/966541828791" target="_blank" class="fab whatsapp">
-            <i class="fab fa-whatsapp text-xl"></i>
-        </a>
-        <button class="fab phone" id="fabPhone">
-            <i class="fas fa-phone text-xl"></i>
-        </button>
-    </div>
-
-    <!-- Header -->
-    <header class="header glass" id="header">
-        <div class="container mx-auto px-6">
-            <div class="flex justify-between items-center">
-                <!-- Logo -->
-                <div class="flex items-center gap-4">
-                    <div class="w-14 h-14 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-xl flex items-center justify-center shadow-lg">
-                        <span class="text-gray-900 text-2xl font-black">ك</span>
-                    </div>
-                    <div>
-                        <h1 class="text-2xl font-black text-white">كمبروسور اكسبريس</h1>
-                        <p class="text-sm text-gray-400">الحراس الصامتون</p>
-                    </div>
-                </div>
-                
-                <!-- CTA Button -->
-                <button class="btn-primary" id="headerCta">
-                    <i class="fas fa-bolt"></i>
-                    اطلب التدخل الفوري
-                </button>
-            </div>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">النخبة للتشطيبات</div>
+            <ul class="nav-links">
+                <li><a href="#services">خدماتنا</a></li>
+                <li><a href="#before-after">أعمالنا</a></li>
+                <li><a href="#testimonials">آراء العملاء</a></li>
+                <li><a href="#service-area">نطاق العمل</a></li>
+            </ul>
         </div>
-    </header>
+    </nav>
 
     <!-- Hero Section -->
-    <section class="hero reveal" id="hero">
-        <div class="hero-bg"></div>
-        <div class="container mx-auto px-6 relative z-10">
-            <div class="max-w-4xl">
-                <h1 class="heading-1 mb-6">
-                    الفوضى التي لا تراها.<br>
-                    <span class="text-yellow-300">الحل الذي نضمنه.</span>
-                </h1>
-                
-                <p class="text-xl text-gray-300 mb-10 leading-relaxed">
-                    حلول هندسية متقدمة لمشاكل الصرف الصحي. نعمل في صمت، لتعيش أنت في سلام.
-                </p>
-                
-                <div class="flex gap-4 flex-wrap">
-                    <button class="btn-primary" id="heroCta">
-                        <i class="fas fa-bolt"></i>
-                        اطلب التدخل الفوري
-                    </button>
-                    
-                    <a href="#arsenal" class="btn-secondary">
-                        <i class="fas fa-shield-alt"></i>
-                        استعرض ترسانتنا
-                    </a>
+    <section class="hero">
+        <div class="hero-content">
+            <img src="public/images/hero.jpeg" alt="أعمال لياسة فاخرة" class="hero-image">
+            <div class="hero-overlay">
+                <h1>إبداع في البناء<br>تفاصيل في التشطيبات</h1>
+                <p>تخصصنا في تنفيذ أعمال التشطيبات والترميم الفاخرة بأعلى معايير الجودة</p>
+                <div class="hero-buttons">
+                    <a href="tel:+966542906096" class="cta-button primary">اتصل بنا الآن</a>
+                    <a href="https://wa.me/966542906096" class="cta-button secondary" target="_blank">تواصل عبر الواتساب</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section (The Arsenal) -->
-    <section id="arsenal" class="py-24 bg-gray-900">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16 reveal">
-                <span class="text-yellow-400 font-semibold tracking-wider mb-4 block">ترسانة الحلول</span>
-                <h2 class="heading-2 mb-6">الأسلحة التي نستخدمها في المعركة</h2>
-                <p class="text-gray-400 text-xl max-w-3xl mx-auto">
-                    كل مشكلة تتطلب حلاً خاصاً. هذه هي الأدوات المتقدمة التي نستخدمها لاستعادة النظام.
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Service 1 -->
-                <div class="service-card reveal">
-                    <div class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-water text-2xl text-gray-900"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-4">تسليك المجاري بالضغط النبضي</h3>
-                    <p class="text-gray-400 mb-6">
-                        تقنية الضغط العالي التي تتغلغل في أعمق الانسدادات وتزيلها دون أضرار للبنية التحتية.
-                    </p>
-                    <button class="text-yellow-400 font-semibold flex items-center gap-2 service-details">
-                        التفاصيل <i class="fas fa-arrow-left"></i>
-                    </button>
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>خدماتنا المتخصصة</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏛️</div>
+                    <h3>لياسة القصور والفلل</h3>
+                    <p>تنفيذ أعمال اللياسة للمشاريع السكنية الفاخرة بدقة عالية وتفاصيل استثنائية.</p>
                 </div>
-                
-                <!-- Service 2 -->
-                <div class="service-card reveal" style="transition-delay: 100ms;">
-                    <div class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-truck text-2xl text-gray-900"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-4">شفط البيارات المتقدم</h3>
-                    <p class="text-gray-400 mb-6">
-                        شاحنات شفط ذات سعات متفاوتة مع أنظمة ترشيح متطورة للتخلص الآمن من المخلفات.
-                    </p>
-                    <button class="text-yellow-400 font-semibold flex items-center gap-2 service-details">
-                        التفاصيل <i class="fas fa-arrow-left"></i>
-                    </button>
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>الترميم وإعادة التأهيل</h3>
+                    <p>إعادة تأهيل المباني القديمة وحلول ترميم مبتكرة تحافظ على الجمالية والقوة.</p>
                 </div>
-                
-                <!-- Service 3 -->
-                <div class="service-card reveal" style="transition-delay: 200ms;">
-                    <div class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-search text-2xl text-gray-900"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-4">كشف التسربات بالسونار</h3>
-                    <p class="text-gray-400 mb-6">
-                        أنظمة كشف صوتية وكاميرات تفتيش تدخل الأنابيب لاكتشاف التسربات بدقة متناهية.
-                    </p>
-                    <button class="text-yellow-400 font-semibold flex items-center gap-2 service-details">
-                        التفاصيل <i class="fas fa-arrow-left"></i>
-                    </button>
-                </div>
-                
-                <!-- Service 4 -->
-                <div class="service-card reveal" style="transition-delay: 300ms;">
-                    <div class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-xl flex items-center justify-center mb-6">
-                        <i class="fas fa-shield-virus text-2xl text-gray-900"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-4">التعقيم الشامل</h3>
-                    <p class="text-gray-400 mb-6">
-                        أنظمة تعقيم بالبخار والمواد المعتمدة دولياً لضمان بيئة صحية وآمنة.
-                    </p>
-                    <button class="text-yellow-400 font-semibold flex items-center gap-2 service-details">
-                        التفاصيل <i class="fas fa-arrow-left"></i>
-                    </button>
+                <div class="service-card">
+                    <div class="service-icon">✨</div>
+                    <h3>المشاريع التجارية الراقية</h3>
+                    <p>تنفيذ أعمال التشطيبات الداخلية والخارجية للمعارض والمطاعم والمكاتب الفاخرة.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Us Section (The Creed) -->
-    <section id="creed" class="py-24" style="background-color: var(--secondary-dark);">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16 reveal">
-                <span class="text-yellow-400 font-semibold tracking-wider mb-4 block">عقيدتنا</span>
-                <h2 class="heading-2 mb-6">المبادئ التي تحكم كل تدخل</h2>
-                <p class="text-gray-400 text-xl max-w-3xl mx-auto">
-                    ليست مجرد خدمات، بل عقيدة عمل تلتزم بها كل فرقنا في كل مهمة.
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Principle 1 -->
-                <div class="text-center reveal">
-                    <div class="w-20 h-20 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-crosshairs text-3xl text-gray-900"></i>
+    <!-- Before & After Section -->
+    <section id="before-after" class="before-after">
+        <div class="container">
+            <h2>قبل وبعد - تحويل المشاريع</h2>
+            <p class="section-subtitle">شاهد كيف نحول المساحات العادية إلى أعمال فنية فاخرة</p>
+            <div class="before-after-grid">
+                <div class="before-after-item">
+                    <img src="public/images/before_after_1.jpg" alt="مشروع ترميم قبل وبعد">
+                    <div class="overlay">
+                        <span class="label">قبل وبعد</span>
                     </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">الدقة</h3>
-                    <p class="text-gray-400">
-                        كل حركة محسوبة، كل قرار مدروس. لا مجال للخطأ في معاركنا تحت الأرض.
-                    </p>
                 </div>
-                
-                <!-- Principle 2 -->
-                <div class="text-center reveal" style="transition-delay: 100ms;">
-                    <div class="w-20 h-20 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-fist-raised text-3xl text-gray-900"></i>
+                <div class="before-after-item">
+                    <img src="public/images/before_after_2.webp" alt="ترميم واجهة المبنى">
+                    <div class="overlay">
+                        <span class="label">تحسين الواجهة</span>
                     </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">القوة</h3>
-                    <p class="text-gray-400">
-                        معدات متطورة وفريق مدرب للتعامل مع أصعب التحديات في أقسى الظروف.
-                    </p>
                 </div>
-                
-                <!-- Principle 3 -->
-                <div class="text-center reveal" style="transition-delay: 200ms;">
-                    <div class="w-20 h-20 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-user-secret text-3xl text-gray-900"></i>
+                <div class="before-after-item">
+                    <img src="public/images/before_after_3.jpg" alt="تجديد المبنى الخارجي">
+                    <div class="overlay">
+                        <span class="label">تجديد شامل</span>
                     </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">السرية</h3>
-                    <p class="text-gray-400">
-                        نعمل في الظل، ننفذ المهمة، ونغادر دون إثارة ضجة. سلامتك هي أولويتنا.
-                    </p>
                 </div>
-                
-                <!-- Principle 4 -->
-                <div class="text-center reveal" style="transition-delay: 300ms;">
-                    <div class="w-20 h-20 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-handshake text-3xl text-gray-900"></i>
+                <div class="before-after-item">
+                    <img src="public/images/before_after_4.jpg" alt="ترميم داخلي متقن">
+                    <div class="overlay">
+                        <span class="label">ترميم داخلي</span>
                     </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">الضمان</h3>
-                    <p class="text-gray-400">
-                        نضمن نتائج عملنا. إذا لم نُصلح المشكلة، لن تدفع فلساً واحداً.
-                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Final CTA (The Bat-Signal) -->
-    <section id="bat-signal" class="py-24" style="background-color: var(--primary-dark);">
-        <div class="container mx-auto px-6">
-            <div class="max-w-3xl mx-auto text-center reveal">
-                <h3 class="heading-3 mb-8">عندما تفشل كل الحلول الأخرى</h3>
-                
-                <div class="w-32 h-32 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center mx-auto mb-8 bat-signal">
-                    <i class="fas fa-phone-alt text-5xl text-gray-900"></i>
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>آراء عملائنا الكرام</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"الاحترافية والدقة في التنفيذ فاقت توقعاتنا. تحول منزلنا إلى قصر بفضل لمسات النخبة للتشطيبات. ننصح بهم بشدة لكل من يبحث عن الفخامة والجودة."</p>
+                    <p class="client-name">م. خالد العتيبي</p>
+                    <p class="client-location">حي النرجس، الرياض</p>
                 </div>
-                
-                <div class="glass-light rounded-2xl p-8 mb-8">
-                    <p class="text-gray-300 text-xl mb-6">
-                        هذه ليست مجرد رقم هاتف. هذا هو خط الاتصال المباشر بفريق التدخل السريع.
-                    </p>
-                    
-                    <div class="text-center">
-                        <a href="tel:+966541828791" class="text-4xl md:text-5xl font-black text-white hover:text-yellow-300 transition-colors duration-300 block mb-4">
-                            +966 54 182 8791
-                        </a>
-                        <p class="text-gray-400">متاحون 24/7 للطوارئ</p>
-                    </div>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"عملية الترميم كانت سلسة ومنظمة. فريق عمل على أعلى مستوى من الكفاءة والالتزام بالمواعيد. النتيجة النهائية مذهلة."</p>
+                    <p class="client-name">سيدة الأعمال نورة الفهد</p>
+                    <p class="client-location">حي حطين، الرياض</p>
                 </div>
-                
-                <button class="btn-primary text-lg px-12 py-4" id="finalCta">
-                    <i class="fas fa-satellite-dish"></i>
-                    انطلق الإشارة
-                </button>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"أفضل شركة لياسة تعاملت معها في الرياض. الجودة في المواد والمهارة في التنفيذ لا تُضاهى. شكراً لكم على هذا الإنجاز."</p>
+                    <p class="client-name">أ. فهد القحطاني</p>
+                    <p class="client-location">حي الياسمين، الرياض</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Area Section -->
+    <section id="service-area" class="service-area">
+        <div class="container">
+            <h2>نطاق خدماتنا في الرياض</h2>
+            <p class="section-subtitle">نغطي جميع أحياء الرياض الفاخرة والرئيسية</p>
+            <div class="areas-grid">
+                <div class="area-item">
+                    <span class="area-icon">📍</span>
+                    <span class="area-name">حي حطين</span>
+                </div>
+                <div class="area-item">
+                    <span class="area-icon">📍</span>
+                    <span class="area-name">حي النرجس</span>
+                </div>
+                <div class="area-item">
+                    <span class="area-icon">📍</span>
+                    <span class="area-name">حي الياسمين</span>
+                </div>
+                <div class="area-item">
+                    <span class="area-icon">📍</span>
+                    <span class="area-name">حي العارض</span>
+                </div>
+                <div class="area-item">
+                    <span class="area-icon">📍</span>
+                    <span class="area-name">حي القيروان</span>
+                </div>
+                <div class="area-item">
+                    <span class="area-icon">📍</span>
+                    <span class="area-name">حي الملقا</span>
+                </div>
+                <div class="area-item">
+                    <span class="area-icon">📍</span>
+                    <span class="area-name">حي الصحافة</span>
+                </div>
+                <div class="area-item">
+                    <span class="area-icon">📍</span>
+                    <span class="area-name">حي الربيع</span>
+                </div>
+                <div class="area-item">
+                    <span class="area-icon">📍</span>
+                    <span class="area-name">حي النخيل</span>
+                </div>
+                <div class="area-item">
+                    <span class="area-icon">📍</span>
+                    <span class="area-name">حي المحمدية</span>
+                </div>
+                <div class="area-item">
+                    <span class="area-icon">📍</span>
+                    <span class="area-name">حي الرائد</span>
+                </div>
+                <div class="area-item">
+                    <span class="area-icon">📍</span>
+                    <span class="area-name">حي السفارات</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>هل أنت مستعد لتحويل مشروعك؟</h2>
+            <p>تواصل معنا اليوم واحصل على استشارة مجانية</p>
+            <div class="cta-buttons">
+                <a href="tel:+966542906096" class="cta-button primary">اتصل الآن</a>
+                <a href="https://wa.me/966542906096" class="cta-button secondary" target="_blank">الواتساب</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 border-t border-gray-800">
-        <div class="container mx-auto px-6">
-            <div class="text-center">
-                <div class="flex justify-center items-center gap-4 mb-6">
-                    <div class="w-12 h-12 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-xl flex items-center justify-center">
-                        <span class="text-gray-900 text-xl font-black">ك</span>
-                    </div>
-                    <h4 class="text-2xl font-black text-white">كمبروسور اكسبريس</h4>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>النخبة للتشطيبات</h3>
+                    <p>متخصصون في التشطيبات والترميم الفاخر بالرياض</p>
                 </div>
-                
-                <p class="text-gray-400 mb-8 max-w-2xl mx-auto">
-                    الحراس الصامتون تحت أرض الرياض. نحن هنا عندما تحتاجنا، نغيب عندما تنتهي المهمة.
-                </p>
-                
-                <div class="border-t border-gray-800 pt-8">
-                    <p class="text-gray-500">
-                        &copy; <span id="currentYear"></span> كمبروسور اكسبريس. جميع الحقوق محفوظة.
-                    </p>
+                <div class="footer-section">
+                    <h3>تواصل معنا</h3>
+                    <p>الهاتف: <a href="tel:+966542906096">+966542906096</a></p>
+                    <p>الواتساب: <a href="https://wa.me/966542906096" target="_blank">+966542906096</a></p>
                 </div>
+                <div class="footer-section">
+                    <h3>الموقع</h3>
+                    <p>الرياض، المملكة العربية السعودية</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 النخبة للتشطيبات. جميع الحقوق محفوظة.</p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script>
-        // Set current year
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-        
-        // Phone number
-        const phoneNumber = '+966541828791';
-        
-        // Handle phone calls
-        function handlePhoneCall() {
-            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                window.location.href = `tel:${phoneNumber}`;
-            } else {
-                // On desktop, show a modal or copy to clipboard
-                const modal = document.createElement('div');
-                modal.className = 'fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-6';
-                modal.innerHTML = `
-                    <div class="glass rounded-2xl p-8 max-w-md w-full">
-                        <div class="text-center">
-                            <div class="w-20 h-20 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                                <i class="fas fa-phone-alt text-3xl text-gray-900"></i>
-                            </div>
-                            <h4 class="text-2xl font-bold text-white mb-4">اتصل بنا الآن</h4>
-                            <p class="text-gray-300 mb-6">انسخ الرقم للاتصال يدوياً</p>
-                            <div class="text-3xl font-mono font-bold text-white mb-6 direction-ltr">${phoneNumber}</div>
-                            <div class="flex gap-4">
-                                <button id="copyBtn" class="btn-primary flex-1">
-                                    <i class="far fa-copy"></i> نسخ الرقم
-                                </button>
-                                <button id="closeModal" class="btn-secondary flex-1">
-                                    إغلاق
-                                </button>
-                            </div>
-                            <div id="copySuccess" class="text-green-400 mt-4 hidden">
-                                <i class="fas fa-check-circle"></i> تم نسخ الرقم بنجاح
-                            </div>
-                        </div>
-                    </div>
-                `;
-                
-                document.body.appendChild(modal);
-                document.body.style.overflow = 'hidden';
-                
-                document.getElementById('copyBtn').addEventListener('click', function() {
-                    navigator.clipboard.writeText(phoneNumber).then(() => {
-                        document.getElementById('copySuccess').classList.remove('hidden');
-                        setTimeout(() => {
-                            document.getElementById('copySuccess').classList.add('hidden');
-                        }, 2000);
-                    });
-                });
-                
-                document.getElementById('closeModal').addEventListener('click', () => {
-                    document.body.removeChild(modal);
-                    document.body.style.overflow = 'auto';
-                });
-                
-                modal.addEventListener('click', (e) => {
-                    if (e.target === modal) {
-                        document.body.removeChild(modal);
-                        document.body.style.overflow = 'auto';
-                    }
-                });
-            }
-        }
-        
-        // Add event listeners to all call buttons
-        document.querySelectorAll('#fabPhone, #headerCta, #heroCta, #finalCta').forEach(btn => {
-            btn.addEventListener('click', handlePhoneCall);
-        });
-        
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('header');
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-        
-        // Reveal on scroll animation
-        function reveal() {
-            const reveals = document.querySelectorAll('.reveal');
-            const windowHeight = window.innerHeight;
-            const revealPoint = 150;
-            
-            reveals.forEach(element => {
-                const revealTop = element.getBoundingClientRect().top;
-                
-                if (revealTop < windowHeight - revealPoint) {
-                    element.classList.add('active');
-                }
-            });
-        }
-        
-        window.addEventListener('scroll', reveal);
-        window.addEventListener('load', reveal);
-        
-        // Service details buttons
-        document.querySelectorAll('.service-details').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const serviceTitle = this.parentElement.querySelector('h3').textContent;
-                alert(`تفاصيل الخدمة: ${serviceTitle}\n\nسيتم توجيهك إلى فريق الاستشارات للحديث عن تفاصيل هذه الخدمة.`);
-            });
-        });
-        
-        // Initialize
-        document.addEventListener('DOMContentLoaded', function() {
-            reveal();
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
-                    </html>
+</html>
